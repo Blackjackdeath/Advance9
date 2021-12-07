@@ -1,0 +1,83 @@
+<div class="wrapper show ">
+  <div class="box" [style.fontSize]="fontS" [style.fontFamily]="fontF" [style.color]="textColor" [style.backgroundColor]="backgroundColorBox" [style.fontWeight]="fontBoldText" [style.fontStyle]="fontCursiveText">
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <div class="boxButton">
+    <div class="buttonShadow editHover">
+      <button type="button" class="buttonStyle editStyle"  (click)="showEdit()">edit</button>
+    </div>
+    <div class="buttonShadow styleHover">
+      <button type="button" class="buttonStyle styleStyle" (click)="showStyle()">style</button>
+    </div>
+  </div>
+  <div class="box">
+    <div *ngIf="showEd">
+      <form name="editForm" #form="ngForm">
+         <textarea name="editArea" class="editArea" ngModel="{{dateFromBox}}"></textarea>
+        <div class="buttonBox">
+          <div class="buttonShadow addHover">
+            <button type="button" class="buttonStyle addStyle" (click)="showAddBox()">add</button>
+          </div>
+          <div class="buttonShadow saveHover">
+            <button type="button" class="buttonStyle saveStyle" (click)="save(form.value.editArea)">save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div *ngIf="showSt">
+       <form name="styleForm">
+          <h4>Font size</h4>
+          <label for="radio1">
+            <input type="radio" name="radio" id="radio1" (click)="fontSize('12px')"><span>12px</span>
+          </label>
+          <label for="radio2">
+            <input type="radio" name="radio" id="radio2" (click)="fontSize('14px')"><span>14px</span>
+          </label>
+          <label for="radio3">
+             <input type="radio" name="radio" id="radio3" (click)="fontSize('16px')"><span>16px</span>
+          </label>
+          <label for="radio4">
+            <input type="radio" name="radio" id="radio4" (click)="fontSize('18px')"><span>18px</span>
+          </label>
+          <label for="radio5">
+             <input type="radio" name="radio" id="radio5" (click)="fontSize('20px')"><span>20px</span>
+          </label>
+          <h4>Font Family</h4>
+          <select class="selectFontFamily" (change)="fontType($event)">
+            <option value="" selected disabled>Choose option</option>
+            <option value="cursive">cursive</option>
+            <option value="fantasy">fantasy</option>
+            <option value="monospace">monospace</option>
+            <option value="sans-serif">sans-serif</option>
+          </select>
+          <h4>Colors</h4>
+         <div class="boxButtonColor">
+           <div class="boxButtonColorBox">
+             <button type="button" class="buttonStyleColor" (click)="showColorBox(true)">Color of text</button>
+             <button type="button" class="buttonStyleColor" (click)="showColorBox(false)">Background color</button>
+           </div>
+         <div [hidden]="showC">
+           <div class="colors" (click)="chooseColor($event)">
+             <div class="color" [style.backgroundColor]="'red'"></div>
+             <div class="color" [style.backgroundColor]="'green'"></div>
+             <div class="color" [style.backgroundColor]="'yellow'"></div>
+             <div class="color" [style.backgroundColor]="'black'"></div>
+             <div class="color" [style.backgroundColor]="'white'"></div>
+             <div class="color" [style.backgroundColor]="'brown'"></div>
+             <div class="color" [style.backgroundColor]="'blue'"></div>
+             <div class="color" [style.backgroundColor]="'gray'"></div>
+             <div class="color" [style.backgroundColor]="'gold'"></div>
+           </div>
+         </div>
+      </div>
+      <h4>Style</h4>
+      <input type="checkbox" name="bold"  (click)="boldText($event)"><span>Bold text</span>
+      <input type="checkbox" name="cursive"  (click)="cursiveText($event)"><span>Cursive text</span>
+       </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="wrapperAdd">
+  <div class="box">
+    <h2>Choose what you want:</h2>
+    <label for="radioTable">
+      <input type="radio" name="radio1" id="radioTable" onclick="radioClickTable()"
+             value="table"><span>table</span>
+    </label>
+    <label for="radioList">
+      <input type="radio" name="radio1" id="radioList" onclick="radioClickList()"
+             value="list"><span>list</span>
+    </label>
+    <form name="tableForm" class="tableForm">
+      <div class="inputBox">
+        <span>Count TR:</span>
+        <input type="text" name="countTR" id="" class="listStyle" placeholder="Count TR">
+      </div>
+      <div class="inputBox">
+        <span>Count TD:</span>
+        <input type="text" name="countTD" id="" class="listStyle" placeholder="Count TD">
+      </div>
+      <h3>Add style to your table:</h3>
+      <div class="inputBox">
+        <span>Width of TD:</span>
+        <input type="text" name="widthTD" id="" class="listStyle" placeholder="Width of TD">
+      </div>
+      <div class="inputBox">
+        <span>Height of TD:</span>
+        <input type="text" name="heightTD" id="" class="listStyle" placeholder="Height of TD">
+      </div>
+      <div class="inputBox">
+        <span>Width of border</span>
+        <input type="text" name="widthBorder" id="" placeholder="Width of border" class="tableStyle marginLeft">
+        <span>Type of border</span>
+        <select name="typeBorder" id="" class="tableStyle">
+          <option value="solid">solid</option>
+          <option value="dotted">dotted</option>
+          <option value="dashed">dashed</option>
+          <option value="double">double</option>
+          <option value="groove">groove</option>
+          <option value="ridge">ridge</option>
+          <option value="inset">inset</option>
+          <option value="outset">outset</option>
+        </select>
+        <span>Color of border</span>
+        <select name="colorBorder" id="" class="tableStyle">
+          <option value="black">black</option>
+          <option value="red">red</option>
+          <option value="blue">blue</option>
+          <option value="green">green</option>
+        </select>
+      </div>
+      <div class="buttonlistShadow">
+        <button type="button" class="buttonListStyle" onclick="createTable()">Create table</button>
+      </div>
+    </form>
+    <form name="listForm" class="listForm">
+      <div class="inputBox">
+        <span>Count Li:</span>
+        <input type="text" name="countLi" id="" class="listStyle " placeholder="Count Li">
+      </div>
+      <div class="inputBox">
+        <span>Type of marks:</span>
+        <select name="typeMark" id="" class="listStyle">
+          <option value="circle">circle</option>
+          <option value="disc">disc</option>
+          <option value="square">square</option>
+        </select>
+      </div>
+      <div class="buttonlistShadow">
+        <button type="button" class="buttonListStyle" onclick="createList()">Create list</button>
+      </div>
+    </form>
+  </div>
+</div>
