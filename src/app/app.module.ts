@@ -21,10 +21,6 @@ import { StyleAppComponent } from './style-app/style-app.component';
 })
 export class AppModule {
 
-  constructor() { }
-  showAdd(){
-
-  }
 }
 
 

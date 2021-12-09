@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'notepad-app';
-  a: boolean | undefined;
+  switchComp: boolean | undefined;
+  date:string='';
 }

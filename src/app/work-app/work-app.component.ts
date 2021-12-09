@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 
 @Component({
   selector: 'app-work-app',
@@ -20,12 +20,12 @@ export class WorkAppComponent implements OnInit {
   backgroundColorBox:string='lightgray';
   fontBoldText:string='normal';
   fontCursiveText:string='normal';
-  showAdd:boolean=false;
-
+  @Input() date:string='';
   @Output() showAddBoxForm = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
+    this.checkInfo();
   };
   showEdit(){
     this.showEd=true;
@@ -45,7 +45,7 @@ export class WorkAppComponent implements OnInit {
     this.fontS=size;
   };
   fontType(event:any){
-    this.fontF=event.target.value
+    this.fontF=event.target.value;
   };
   showColorBox(check:boolean){
     this.showC=false;
@@ -79,5 +79,12 @@ export class WorkAppComponent implements OnInit {
   };
   showAddBox(){
     this.showAddBoxForm.emit(true);
+  };
+  checkInfo(){
+    if(this.date!=''){
+      this.showEdit();
+      this.dateFromBox+=this.date;
+      this.date='';
+    }
   }
 }

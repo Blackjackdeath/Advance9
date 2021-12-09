@@ -2,37 +2,35 @@
   <div class="box">
     <h2>Choose what you want:</h2>
     <label for="radioTable">
-      <input type="radio" name="radio1" id="radioTable" onclick="radioClickTable()"
-             value="table"><span>table</span>
+      <input type="radio" name="radio1" id="radioTable"  (click)="tableShow()" value="table"><span>table</span>
     </label>
     <label for="radioList">
-      <input type="radio" name="radio1" id="radioList" onclick="radioClickList()"
-             value="list"><span>list</span>
+      <input type="radio" name="radio1" id="radioList"  (click)="listShow()" value="list"><span>list</span>
     </label>
-    <form name="tableForm" class="tableForm">
+    <form name="tableForm" class="tableForm" *ngIf="tableS" #tableForm="ngForm">
       <div class="inputBox">
         <span>Count TR:</span>
-        <input type="text" name="countTR" id="" class="listStyle" placeholder="Count TR">
+        <input type="text" name="countTR" class="listStyle" placeholder="Count TR" ngModel>
       </div>
       <div class="inputBox">
         <span>Count TD:</span>
-        <input type="text" name="countTD" id="" class="listStyle" placeholder="Count TD">
+        <input type="text" name="countTD" class="listStyle" placeholder="Count TD" ngModel>
       </div>
       <h3>Add style to your table:</h3>
       <div class="inputBox">
         <span>Width of TD:</span>
-        <input type="text" name="widthTD" id="" class="listStyle" placeholder="Width of TD">
+        <input type="text" name="widthTD" class="listStyle" placeholder="Width of TD" ngModel>
       </div>
       <div class="inputBox">
         <span>Height of TD:</span>
-        <input type="text" name="heightTD" id="" class="listStyle" placeholder="Height of TD">
+        <input type="text" name="heightTD" class="listStyle" placeholder="Height of TD" ngModel>
       </div>
       <div class="inputBox">
         <span>Width of border</span>
-        <input type="text" name="widthBorder" id="" placeholder="Width of border" class="tableStyle marginLeft">
+        <input type="text" name="widthBorder" placeholder="Width of border" class="tableStyle marginLeft" ngModel>
         <span>Type of border</span>
-        <select name="typeBorder" id="" class="tableStyle">
-          <option value="solid">solid</option>
+        <select name="typeBorder" class="tableStyle" ngModel="solid">
+          <option value="solid" selected>solid</option>
           <option value="dotted">dotted</option>
           <option value="dashed">dashed</option>
           <option value="double">double</option>
@@ -42,32 +40,32 @@
           <option value="outset">outset</option>
         </select>
         <span>Color of border</span>
-        <select name="colorBorder" id="" class="tableStyle">
-          <option value="black">black</option>
+        <select name="colorBorder" class="tableStyle" ngModel="black">
+          <option value="black" selected>black</option>
           <option value="red">red</option>
           <option value="blue">blue</option>
           <option value="green">green</option>
         </select>
       </div>
       <div class="buttonlistShadow">
-        <button type="button" class="buttonListStyle" onclick="createTable()">Create table</button>
+        <button type="button" class="buttonListStyle" (click)="createTable(tableForm.value)">Create table</button>
       </div>
     </form>
-    <form name="listForm" class="listForm">
+    <form name="listForm" class="listForm" *ngIf="listS"  #listForm="ngForm" >
       <div class="inputBox">
         <span>Count Li:</span>
-        <input type="text" name="countLi" id="" class="listStyle " placeholder="Count Li">
+        <input type="text" name="countLi" class="listStyle" placeholder="Count Li" ngModel>
       </div>
       <div class="inputBox">
         <span>Type of marks:</span>
-        <select name="typeMark" id="" class="listStyle">
-          <option value="circle">circle</option>
+        <select name="typeMark" class="listStyle" ngModel="circle">
+          <option value="circle" selected>circle</option>
           <option value="disc">disc</option>
           <option value="square">square</option>
         </select>
       </div>
       <div class="buttonlistShadow">
-        <button type="button" class="buttonListStyle" onclick="createList()">Create list</button>
+        <button type="button" class="buttonListStyle" (click)="createList(listForm.value)">Create list</button>
       </div>
     </form>
   </div>

@@ -17,7 +17,7 @@
   <div class="box">
     <div *ngIf="showEd">
       <form name="editForm" #form="ngForm">
-         <textarea name="editArea" class="editArea" ngModel="{{dateFromBox}}"></textarea>
+         <textarea name="editArea" class="editArea" ngModel="{{dateFromBox+date}}"></textarea>
         <div class="buttonBox">
           <div class="buttonShadow addHover">
             <button type="button" class="buttonStyle addStyle" (click)="showAddBox()">add</button>

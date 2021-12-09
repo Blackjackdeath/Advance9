@@ -1,2 +1,2 @@
-<app-work-app (showAddBoxForm)="a=$event" *ngIf="!a"></app-work-app>
-<app-style-app *ngIf="a"></app-style-app>
+<app-work-app (showAddBoxForm)="switchComp=$event" [hidden]="switchComp" [date]="date"></app-work-app>
+<app-style-app [hidden]="!switchComp" (hideAdd)="switchComp=$event" (dateAdd)="date=$event"></app-style-app>
